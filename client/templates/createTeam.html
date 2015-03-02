@@ -2,8 +2,7 @@
     <div class="container">
         <h1>CREATE TEAM</h1>
         <div class="create-team-blub">
-            Uh oh, looks like you're not part of a team!
-            Create a team here to become a team captain!
+            Create your team here to become a team captain!
         </div>
         {{#unless teamCreated}}
             <form>
@@ -15,10 +14,11 @@
             </form>
         {{/unless}}
         {{#if teamCreated}}
+            Team {{teamName}} has been created successfully! <br/>
             <button class="add-members">Add members</button>
             {{#if addMembers}}
                 <form>
-                    <div class="form-group">
+                    <div class="form-inline">
                         <label for="new-member-name">Name:</label>
                         <input type="text" class="form-control" id="new-member-name" placeholder="Name">
                         <label for="new-member-email">Email:</label>

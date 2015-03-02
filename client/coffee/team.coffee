@@ -3,7 +3,6 @@ Template.team.helpers
     hasTeam: ->
         team = Team.find
             'members.username': Meteor.user().username
-
         !!team.count()
 
 ## Team View ##
@@ -23,6 +22,7 @@ teamAlreadyExists = (teamName) ->
 Template.createTeam.helpers
     teamCreated: -> Session.get 'teamCreated'
     addMembers: -> Session.get 'addMembers'
+    teamName: -> Session.get 'teamName'
 
 Template.createTeam.events
     'click .team-name-submit': ->
@@ -33,10 +33,13 @@ Template.createTeam.events
                 members: []
                 setUp: false
                 played: false
-        else
-            Session.set 'teamCreated', true
-            console.log Team.findOne
-                teamName: teamName
+
+            Session.set 'teamName', teamName
+
+        Session.set 'teamCreated', true
+        console.log Team.findOne
+            teamName: teamName
 
     'click .add-members': ->
         Session.set 'addMembers', true
+

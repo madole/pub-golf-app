@@ -8,3 +8,9 @@ Router.route '/rules', ->
 
 Router.route '/team', ->
   @render 'team'
+
+Router.route '/createTeam', ->
+    @render 'createTeam'
+
+Router.route '/joinTeam', ->
+    @render 'team'

@@ -8,7 +8,16 @@
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/rules">Rules</a></li>
             {{#if currentUser}}
-                <li><a href="/team">Team</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Team <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/createTeam">Create Team</a></li>
+                        <li><a href="/joinTeam">Join Team</a></li>
+                        {{#if hasTeam}}
+                            <li><a href="/team">Your Team</a></li>
+                        {{/if}}
+                    </ul>
+                </li>
                 <li><a href="/">Score Card</a></li>
             {{/if}}
             <li>{{> loginButtons align='right'}}</li>
