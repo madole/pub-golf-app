@@ -1,0 +1,31 @@
+<template name="createTeam">
+    <div class="container">
+        <h1>CREATE TEAM</h1>
+        <div class="create-team-blub">
+            Uh oh, looks like you're not part of a team!
+            Create a team here to become a team captain!
+        </div>
+        {{#unless teamCreated}}
+            <form>
+                <div class="form-group">
+                    <label for="team-name">Team Name</label>
+                    <input type="text" class="form-control" id="team-name" placeholder="Team Name">
+                </div>
+                <button type="button" class="team-name-submit">Submit</button>
+            </form>
+        {{/unless}}
+        {{#if teamCreated}}
+            <button class="add-members">Add members</button>
+            {{#if addMembers}}
+                <form>
+                    <div class="form-group">
+                        <label for="new-member-name">Name:</label>
+                        <input type="text" class="form-control" id="new-member-name" placeholder="Name">
+                        <label for="new-member-email">Email:</label>
+                        <input type="text" class="form-control" id="new-member-email" placeholder="Email">
+                    </div>
+                </form>
+            {{/if}}
+        {{/if}}
+    </div>
+</template>

@@ -1,0 +1,18 @@
+<template name="navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#"><img src="Logo.png" height="50px"/></a>
+            </div>
+        <ul class="navbar-items">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/rules">Rules</a></li>
+            {{#if currentUser}}
+                <li><a href="/team">Team</a></li>
+                <li><a href="/">Score Card</a></li>
+            {{/if}}
+            <li>{{> loginButtons align='right'}}</li>
+        </ul>
+        </div>
+        </nav>
+</template>

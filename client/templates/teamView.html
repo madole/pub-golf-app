@@ -1,0 +1,12 @@
+<template name="teamView">
+    <h1>VIEW TEAM</h1>
+    <div class="container">
+        <table class="members-table">
+            <tbody>
+                {{#each teamMembers}}
+                    <tr><td>{{this}}</td></tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>
