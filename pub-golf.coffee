@@ -12,5 +12,5 @@ Router.route '/team', ->
 Router.route '/createTeam', ->
     @render 'createTeam'
 
-Router.route '/joinTeam', ->
-    @render 'team'
+Router.route '/searchTeam', ->
+    @render 'searchTeam'

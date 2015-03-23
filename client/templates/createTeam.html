@@ -15,17 +15,19 @@
         {{/unless}}
         {{#if teamCreated}}
             Team {{teamName}} has been created successfully! <br/>
-            <button class="add-members">Add members</button>
-            {{#if addMembers}}
-                <form>
+
+            {{#each teamMembers}}
+                <div class="team">{{name}} | {{email}}</div>
+            {{/each}}
+                <form class="new-members">
                     <div class="form-inline">
                         <label for="new-member-name">Name:</label>
-                        <input type="text" class="form-control" id="new-member-name" placeholder="Name">
+                        <input type="text" class="form-control" id="new-member-name" name="newMemberName" placeholder="Name">
                         <label for="new-member-email">Email:</label>
-                        <input type="text" class="form-control" id="new-member-email" placeholder="Email">
+                        <input type="text" class="form-control" id="new-member-email" name="newMemberEmail" placeholder="Email">
                     </div>
+                    <input type="submit" value="Save">
                 </form>
-            {{/if}}
         {{/if}}
     </div>
 </template>

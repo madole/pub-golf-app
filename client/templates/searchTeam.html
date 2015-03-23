@@ -1,0 +1,23 @@
+<template name="searchTeam">
+    <div class="container">
+        {{#unless searched}}
+            <h1>SEARCH TEAM</h1>
+            <form>
+                <div class="form-group">
+                    <label for="team-name">Enter Team Name</label>
+                    <input type="text" class="form-control" id="team-name" placeholder="The Pub Golfians">
+                </div>
+                <button type="button" class="team-name-submit">Submit</button>
+            </form>
+        {{/unless}}
+
+        {{#if team}}
+            <div class="jumbotron">WE FOUND YOUR TEAM: {{team.teamName}}</div>
+        {{/if}}
+        {{#if searched}}
+            {{#unless team}}
+                <div class="jumbotron">Sorry we couldn't find your team, try again!</div>
+            {{/unless}}
+        {{/if}}
+    </div>
+</template>
